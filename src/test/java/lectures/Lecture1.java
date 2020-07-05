@@ -22,7 +22,19 @@ public class Lecture1 {
     // 1. Find people aged less or equal 18
     // 2. Then change implementation to find first 10 people
 
+
+    System.out.println(people.get(1));
+    int c = 0;
+    for (Person p : people) {
+      if(p.getAge() < 18 & c < 10) {
+        System.out.println(p.getFirstName() + " " + p.getAge());
+        c = c + 1;
+      }
+    }
+
+
   }
+
 
   @Test
   public void declarativeApproachUsingStreams() throws Exception {
