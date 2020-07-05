@@ -39,6 +39,13 @@ public class Lecture1 {
   @Test
   public void declarativeApproachUsingStreams() throws Exception {
     ImmutableList<Person> people = MockData.getPeople();
+            List<Person>  ypeople= people.stream()
+            .filter(person -> person.getAge() <= 18)
+            .limit(10)
+            .collect(Collectors.toList());//sum, collect, average. collect(Collectors.groupBy),
+
+    ypeople.forEach(System.out::println);
+
 
   }
 }
