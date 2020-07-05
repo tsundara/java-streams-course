@@ -9,15 +9,35 @@ import org.junit.Test;
 
 public class Lecture3 {
 
+
+
   @Test
   public void min() throws Exception {
-    final List<Integer> numbers = ImmutableList.of(1, 2, 3, 100, 23, 93, 99);
+    final List<Integer> numbers = ImmutableList.of(2, 3, 100, 23, 93, 99);
+
+    Integer mymin = numbers.stream()
+            .sorted()
+            .findFirst()
+            .get();
+
+    //assertThat(mymin).isEqualTo(2);
+    System.out.println(mymin);
+
+
 
   }
 
   @Test
   public void max() throws Exception {
     final List<Integer> numbers = ImmutableList.of(1, 2, 3, 100, 23, 93, 99);
+
+    Integer mymax = numbers.stream()
+            .sorted(Comparator.reverseOrder())
+            .findFirst()
+            .get();
+
+    //assertThat(mymin).isEqualTo(2);
+    System.out.println(mymax);
 
   }
 }
